@@ -9,7 +9,7 @@ export interface GeosearchInterface {
      * @param {FeatureCollection<Polygon | Point>} data
      * @return {void}
      */
-    init(data: FeatureCollection<Polygon | Point>): Promise<void>;
+    init(data: FeatureCollection<Polygon | Point>): Promise<void> | void;
 
     /**
      * Return a feature collection of points and polygons around a certain radius
@@ -23,7 +23,9 @@ export interface GeosearchInterface {
     find(
         position: Position,
         radius: number
-    ): Promise<FeatureCollection<Polygon | Point>>;
+    ):
+        | Promise<FeatureCollection<Polygon | Point>>
+        | FeatureCollection<Polygon | Point>;
 
     /**
      * Shutdown resources
@@ -31,5 +33,5 @@ export interface GeosearchInterface {
      * @async
      * @return {void}
      */
-    shutdown(): Promise<void>;
+    shutdown(): Promise<void> | void;
 }
