@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "allowJs": false,
+    "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "declaration": true,
@@ -16,7 +16,7 @@
     "rootDir": "src",
     "sourceMap": true,
     "strictNullChecks": true,
-    "target": "es2019"
+    "target": "es2019",
   },
   "include": ["src"],
   "exclude": [
