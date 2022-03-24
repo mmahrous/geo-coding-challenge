@@ -19,11 +19,14 @@
     "test": "jest",
     "format": "prettier --write src/{*.ts,**/*.ts}",
     "u": "yarn upgrade-interactive --latest",
-    "up": "docker-compose up",
+    "up": "docker-compose run --service-ports code",
     "down": "docker-compose down",
     "prepare": "husky install"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@types/pg": "8.6.5",
+    "pg": "8.7.3"
+  },
   "devDependencies": {
     "@commitlint/cli": "16.1.0",
     "@commitlint/config-conventional": "16.0.0",

@@ -1,1 +1,25 @@
 version: "3"
+services:
+  code:
+    tty: true
+    stdin_open: true
+    depends_on:
+      - postgis
+    image: node:16.14.2-buster
+    environment:
+      - POSTGIS_URI=postgresql://localuser:localpassword@postgis:5432
+    volumes:
+      - .:/code:rw
+    working_dir: /code
+    links:
+      - "postgis:postgis"
+    command: 'sh ./startup.sh'
+  postgis:
+    image: 'postgis/postgis:14-3.2-alpine'
+    volumes: 
+      - .data:/var/lib/postgresql:rw
+    environment:
+      - POSTGRES_USER=localuser
+      - POSTGRES_PASSWORD=localpassword
+    ports:
+      - 5432:5432
