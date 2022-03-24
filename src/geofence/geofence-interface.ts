@@ -9,7 +9,7 @@ export interface GeofenceInterface {
      * @param {FeatureCollection<Polygon>} data
      * @return {void}
      */
-    init(data: FeatureCollection<Polygon>): Promise<void>;
+    init(data: FeatureCollection<Polygon>): Promise<void> | void;
 
     /**
      * Return a feature collection of polygons in which the position is inside
@@ -19,7 +19,9 @@ export interface GeofenceInterface {
      * @param {Position} position
      * @return {FeatureCollection<Polygon>}
      */
-    set(position: Position): Promise<FeatureCollection<Polygon>>;
+    set(
+        position: Position
+    ): Promise<FeatureCollection<Polygon>> | FeatureCollection<Polygon>;
 
     /**
      * Shutdown resources
@@ -27,5 +29,5 @@ export interface GeofenceInterface {
      * @async
      * @return {void}
      */
-    shutdown(): Promise<void>;
+    shutdown(): Promise<void> | void;
 }
