@@ -1,0 +1,17 @@
+[package]
+name = "raycasting-rust"
+version = "0.1.0"
+license = "MIT"
+build = "build.rs"
+edition = "2018"
+exclude = ["artifacts.json", "index.node"]
+
+[lib]
+name = "geofence_rust"
+crate-type = ["cdylib"]
+
+[build-dependencies]
+neon-build = "0.10.0"
+
+[dependencies]
+neon = "0.10.0"

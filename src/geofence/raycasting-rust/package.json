@@ -1,0 +1,14 @@
+{
+  "name": "raycasting-rust",
+  "version": "0.1.0",
+  "description": "",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "neon-cli": "^0.10.0",
+    "node-gyp": "9.0.0"
+  },
+  "scripts": {
+    "install": "neon build"
+  }
+}
