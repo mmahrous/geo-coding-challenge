@@ -2,7 +2,7 @@
   "name": "raycasting-rust",
   "version": "0.1.0",
   "description": "",
-  "main": "lib/index.js",
+  "main": "lib/index.ts",
   "license": "MIT",
   "dependencies": {
     "neon-cli": "^0.10.0",
